@@ -7,6 +7,8 @@ import { fetchCategories, fetchQuestions } from './api/triviaApi';
 import Skeleton from './components/Skeleton/Skeleton';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import CategoryList from './components/CategoryList/CategoryList';
+import ChartsCarousel from './components/ChartsCarousel/ChartsCarousel';
+import CategoryChart from './components/CategoryChart/CategoryChart';
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -73,7 +75,10 @@ function App() {
         </div>
 
         <div className="main-content">
-            {/* The page for charts and display data */}
+            <ChartsCarousel>
+                <CategoryChart data={categoryCounts} show={showCategoryChart} questions={filteredQuestions} />
+                <div>Chart 2</div>
+            </ChartsCarousel>
         </div>
 
       </div>
