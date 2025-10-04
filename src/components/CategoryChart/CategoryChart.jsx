@@ -49,7 +49,7 @@ const CategoryChart = ({ data, show, questions }) => {
     <ResponsiveContainer width="100%" height={400}>
       <BarChart
         data={data}
-        margin={{ top: 20, right: 20, left: 10, bottom: isMobile ? 80 : 100 }}
+        margin={{ top: 20, right: 20, left: 10, bottom: isMobile ? 40 : 100 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis

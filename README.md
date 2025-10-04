@@ -1,16 +1,42 @@
-# React + Vite
+# Trivia Questions Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based visualization tool that displays trivia question distributions from the [Open Trivia DB API](https://opentdb.com). It features a scrollable category list on the left and a carousel of charts (category and difficulty distributions) on the right.
 
-Currently, two official plugins are available:
+## Features
+- **Category List**: Scrollable, clickable, for filtering questions.
+- **Charts**:
+  - Category distribution bar chart (shown when "All Categories" is selected).
+  - Difficulty distribution bar chart (filtered by selected category).
+- **Carousel**: One chart at a time with arrows and dots.
+- **Caching**: LocalStorage to avoid rate limits.
+- **Consistent UI**: Fixed chart board (850x450px).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React with hooks
+- Vite
+- Recharts
+- Open Trivia DB API
+- GitHub Pages
 
-## React Compiler
+## Prerequisites
+- Node.js (v16+)
+- npm (v7+)
+- Git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup Instructions
 
-## Expanding the ESLint configuration
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Xurshid97/triviaviz.git
+   cd triviaviz
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Install Dependencies**
+   ```bash
+   npm install
+    ```
+3. **Run the Application**
+   ```bash
+   npm run dev
+   ```
+
+

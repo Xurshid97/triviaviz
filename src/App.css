@@ -3,7 +3,6 @@
   height: 100vh;
   margin: 0 auto;
   padding: 20px;
-  border: 10px solid red;
 }
 
 .app-content {
@@ -11,17 +10,14 @@
   height: 100%;
   display: flex;
   gap: 20px;
-  border: 10px solid blue;
 }
 
 .sidebar {
   flex: 1 1 30%;
-  border: 10px solid yellow;
 }
 
 .main-content {
   flex: 1 1 70%;
-  border: 10px solid green;
 }
 
 

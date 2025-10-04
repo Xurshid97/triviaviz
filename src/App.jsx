@@ -9,6 +9,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import CategoryList from './components/CategoryList/CategoryList';
 import ChartsCarousel from './components/ChartsCarousel/ChartsCarousel';
 import CategoryChart from './components/CategoryChart/CategoryChart';
+import DifficultyChart from './components/DifficultyChart/DifficultyChart';
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -77,7 +78,7 @@ function App() {
         <div className="main-content">
             <ChartsCarousel>
                 <CategoryChart data={categoryCounts} show={showCategoryChart} questions={filteredQuestions} />
-                <div>Chart 2</div>
+                <DifficultyChart data={difficultyCounts} category={selectedCategory} />
             </ChartsCarousel>
         </div>
 
