@@ -1,11 +1,13 @@
+import './App.css';
+
 function App() {
   return (
-    <div style={{ padding: '20px', maxWidth: '100vw', margin: '0 auto' }}>
-      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-        <div style={{ flex: '1 1 30%'}}>
+    <div className="app-container">
+      <div className="app-content">
+        <div className="sidebar" >
             {/* The side for category list */}
         </div>
-        <div style={{ flex: '1 1 70%'}}>
+        <div className="main-content">
             {/* The page for charts and display data */}
         </div>
       </div>
