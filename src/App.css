@@ -30,8 +30,9 @@
     flex-direction: column;
   }
 
-  .sidebar, .main-content {
-    flex: 1 1 100%;
+  .sidebar {
+    flex: none;
+    height: fit-content;
   }
 
 }

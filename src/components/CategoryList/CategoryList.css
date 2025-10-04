@@ -1,4 +1,23 @@
-.category-search {
+.category-wrapper {
+  width: 100%;
+  position: relative; /* needed for mobile dropdown positioning */
+}
+
+/* Dropdown button (hidden on desktop) */
+.category-dropdown-btn {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Default desktop search + list */
+.desktop-view .category-search {
   width: 100%;
   padding: 10px;
   margin-bottom: 5px;
@@ -7,13 +26,14 @@
   font-size: 14px;
 }
 
-.category-list {
+.desktop-view .category-list {
   list-style-type: none;
   padding: 5px;
   max-height: 79vh;
   overflow-y: auto;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin: 0;
 }
 
 .category-item {
@@ -27,4 +47,49 @@
   padding: 10px;
   color: #888;
   text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  /* Show dropdown button */
+  .category-dropdown-btn {
+    display: block;
+  }
+
+  /* Hide desktop sidebar */
+  .desktop-view {
+    display: none;
+  }
+
+  /* Dropdown overlay */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; /* right below button */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .dropdown-menu .category-search {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .dropdown-menu .category-list {
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
 }
