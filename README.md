@@ -1,3 +1,6 @@
+# Link to Live Demo
+[Live Demo on GitHub Pages](https://xurshid97.github.io/triviaviz/)
+
 # Trivia Questions Visualization
 
 This is a React-based visualization tool that displays trivia question distributions from the [Open Trivia DB API](https://opentdb.com). It features a scrollable category list on the left and a carousel of charts (category and difficulty distributions) on the right.
@@ -38,5 +41,3 @@ This is a React-based visualization tool that displays trivia question distribut
    ```bash
    npm run dev
    ```
-
-
