@@ -10,17 +10,6 @@ const ChartsCarousel = ({ children }) => {
   return (
     <div className="charts-carousel">
 
-      {React.Children.map(children, (child, index) => (
-        <div
-          key={index}
-          style={{
-            display: index === currentIndex ? 'block' : 'none',
-          }}
-        >
-          {child}
-        </div>
-      ))}
-
       {total > 1 && (
         <div className="carousel-buttons">
           {labels.map((label, index) => (
@@ -34,6 +23,18 @@ const ChartsCarousel = ({ children }) => {
           ))}
         </div>
       )}
+
+      {React.Children.map(children, (child, index) => (
+        <div
+          key={index}
+          style={{
+            display: index === currentIndex ? 'block' : 'none',
+          }}
+        >
+          {child}
+        </div>
+      ))}
+
     </div>
   );
 };
