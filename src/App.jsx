@@ -6,10 +6,12 @@ import { fetchCategories, fetchQuestions } from './api/triviaApi';
 
 import Skeleton from './components/Skeleton/Skeleton';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import CategoryList from './components/CategoryList/CategoryList';
 
 function App() {
   const [categories, setCategories] = useState([]);
   const [questions, setQuestions] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -33,15 +35,41 @@ function App() {
     loadData();
   }, []);
 
+
+  const filteredQuestions = selectedCategory === 'All'
+    ? questions
+    : questions.filter((q) => q.category === selectedCategory);
+
+  const categoryCounts = categories
+    .map((cat) => ({
+      name: cat.name,
+      count: questions.filter((q) => q.category === cat.name).length,
+    }))
+    .filter((d) => d.count > 0);
+
+  const difficultyCounts = [
+    { name: 'Easy', count: filteredQuestions.filter((q) => q.difficulty === 'easy').length },
+    { name: 'Medium', count: filteredQuestions.filter((q) => q.difficulty === 'medium').length },
+    { name: 'Hard', count: filteredQuestions.filter((q) => q.difficulty === 'hard').length },
+  ];
+
+  const showCategoryChart = selectedCategory === 'All';
+
   if (loading) return <Skeleton />;
   if (error) return <ErrorPage errorMessage={error} onRetry={loadData} />;
 
   return (
     <div className="app-container">
       <div className="app-content">
-        
+
         <div className="sidebar" >
-            {/* The side for category list */}
+
+            <CategoryList
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelect={setSelectedCategory}
+          />
+
         </div>
 
         <div className="main-content">

@@ -1,0 +1,30 @@
+.category-search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 5px;
+  max-height: 79vh;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.category-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.no-categories {
+  padding: 10px;
+  color: #888;
+  text-align: center;
+}
